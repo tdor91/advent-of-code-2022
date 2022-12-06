@@ -12,7 +12,7 @@ var partiallyOverlappingAssignments = lines
     .Where(assignment => assignment.IsPartiallyOverlapping())
     .Count();
 
-Console.WriteLine($"Part 2: Number of completely overlapping sections: {partiallyOverlappingAssignments}");
+Console.WriteLine($"Part 2: Number of partially overlapping sections: {partiallyOverlappingAssignments}");
 
 class Assignment
 {
@@ -48,7 +48,6 @@ class Section
 
     public int Start { get; set; }
     public int End { get; set; }
-    public int Diff => End - Start;
 
     public bool OverlapsCompletely(Section other)
     {
